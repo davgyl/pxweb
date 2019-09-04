@@ -67,7 +67,7 @@ s <- s %>%
     Suicides
   ) %>% 
   filter(
-    Year >= 1981, 
+    # Year >= 1981, 
     !Age == "Total"
   )
 
@@ -82,7 +82,7 @@ p <- p %>%
     Population = `Population 31 Dec`
   ) %>% 
   filter(
-    Year >= 1981, 
+    # Year >= 1981, 
     Year <= 2017,
     !Age == "Total"
   ) %>% 
@@ -103,13 +103,13 @@ p <- p %>%
 # Plot --------------------------------------------------------------------
 
 r <- 
-  s %>% 
-  left_join(p) %>% 
+  s %>% filter(Year > 1921) %>% 
+  left_join(p %>% filter(Year > 1921)) %>% 
   mutate(
     Rate = Suicides / Population * 10000
   ) 
 
-r %>% 
+r %>% filter(Year > 1981) %>% 
   ggplot(aes(
     x = Age, 
     y = Rate, 
@@ -123,3 +123,16 @@ r %>%
   ) + 
   theme_minimal()
 
+r %>% filter(Year > 1921) %>% 
+  ggplot(aes(
+    x = Year, 
+    y = Rate, 
+    fill = Rate
+  )) +
+  geom_bar(stat = "identity") +
+  facet_grid(Age ~ .) +
+  scale_fill_gradient(
+    low = "lightblue1",
+    high = "navy"
+  ) + 
+  theme_minimal()
