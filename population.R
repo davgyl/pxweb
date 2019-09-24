@@ -15,31 +15,14 @@ p_load(
 
 Sys.setlocale(locale="UTF-8")
 
-
 # URLs --------------------------------------------------------------------
 
-# Population structure
-url_p <- 
-  "http://pxnet2.stat.fi/PXWeb/api/v1/en/StatFin/vrm/vaerak/statfin_vaerak_pxt_11rc.px"
+# Number of born alive
 
 url_b <- 
   "http://pxnet2.stat.fi/PXWeb/api/v1/fi/StatFin/vrm/synt/statfin_synt_pxt_003.px"
 
-
 # Download data -----------------------------------------------------------
-
-p_orig <- 
-  pxweb_get_data(
-    url = url_p,
-    query = 
-      list(
-        Vuosi = c('*'),
-        Sukupuoli = c('*'),
-        Ikä = c('*'),
-        Tiedot = c('*')
-      )
-  ) %>% 
-  as.tibble()
 
 b_orig <- 
   pxweb_get_data(
@@ -52,6 +35,9 @@ b_orig <-
       )
   ) %>% 
   as.tibble()
+
+
+# Tidy data ---------------------------------------------------------------
 
 b <- 
   b_orig %>% 
