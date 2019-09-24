@@ -62,7 +62,7 @@ b %>%
   geom_bar(stat = "identity") + 
   labs(
     # title = "...", 
-    caption = "Data: http://pxnet2.stat.fi/PXWeb/pxweb/en/\nCode: https://github.com/davgyl/pxweb", 
+    caption = "Data: http://pxnet2.stat.fi/PXWeb/pxweb/en/\nCode: https://github.com/davgyl/pxweb/blob/master/population.R", 
     x = "Birth year", 
     y = "Cumulative number of subjects") + 
   theme_minimal()
