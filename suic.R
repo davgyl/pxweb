@@ -1,3 +1,6 @@
+
+# Age-Period-Cohort visualization of suicide rates ------------------------
+
 # David Gyllenberg
 
 # Packages ----------------------------------------------------------------
