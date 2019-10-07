@@ -1,2 +1,2 @@
 # pxweb
-Exploration of open pxweb-databases.
+Visualizations of data from open pxweb-databases.
