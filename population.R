@@ -19,8 +19,11 @@ Sys.setlocale(locale="UTF-8")
 
 # Number of born alive
 
+# url_b <- 
+  # "http://pxnet2.stat.fi/PXWeb/api/v1/fi/StatFin/vrm/synt/statfin_synt_pxt_003.px"
+
 url_b <- 
-  "http://pxnet2.stat.fi/PXWeb/api/v1/fi/StatFin/vrm/synt/statfin_synt_pxt_003.px"
+  "http://pxnet2.stat.fi/PXWeb/api/v1/fi/StatFin/vrm/synt/statfin_synt_pxt_12dl.px"
 
 # Download data -----------------------------------------------------------
 
