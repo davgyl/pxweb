@@ -10,7 +10,8 @@ suppressMessages(
 # Load packages
 p_load(
   tidyverse, 
-  pxweb
+  pxweb, 
+  openxslx
 )
 
 Sys.setlocale(locale="UTF-8")
@@ -69,3 +70,13 @@ b %>%
     x = "Birth year", 
     y = "Cumulative number of subjects") + 
   theme_minimal()
+
+
+# Table -------------------------------------------------------------------
+
+openxlsx::write.xlsx(
+  b %>% 
+    filter(Year >= 1987) %>% 
+    mutate(cum = cumsum(N)), 
+  "born_alive.xlsx"
+)
